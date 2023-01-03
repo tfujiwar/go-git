@@ -306,15 +306,18 @@ func isPathInDirectory(path, directory string) bool {
 	ds := strings.Split(filepath.Clean(directory), "/")
 
 	if len(ds) == 1 && ds[0] == "." {
+		println("dot")
 		return true
 	}
 
 	if len(ps) < len(ds) {
+		println("len(ps) < len(ds)", len(ps), len(ds))
 		return false
 	}
 
 	for i := 0; i < len(ds); i++ {
 		if ps[i] != ds[i] {
+			println("ps[i] != ds[i]", ps[i], ds[i])
 			return false
 		}
 	}
