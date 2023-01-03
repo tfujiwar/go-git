@@ -32,7 +32,7 @@ test:
 test-coverage:
 	@echo "running against `git version`"; \
 	echo "" > $(COVERAGE_REPORT); \
-	$(GOTEST) -coverprofile=$(COVERAGE_REPORT) -coverpkg=./... -covermode=$(COVERAGE_MODE) ./...
+	$(GOTEST) -coverprofile=$(COVERAGE_REPORT) -v -coverpkg=./... -covermode=$(COVERAGE_MODE) ./...
 
 clean:
 	rm -rf $(GIT_DIST_PATH)
