@@ -280,7 +280,7 @@ func (w *Worktree) doAddDirectory(idx *index.Index, s Status, directory string, 
 	}
 
 	for name := range s {
-		if !isPathInDirectory(name, filepath.ToSlash(filepath.Clean(directory))) {
+		if !isPathInDirectory(name, filepath.Clean(directory)) {
 			continue
 		}
 
